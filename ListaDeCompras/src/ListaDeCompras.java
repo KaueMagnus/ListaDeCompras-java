@@ -60,8 +60,13 @@ public class ListaDeCompras {
     private static void adicionarItem(ArrayList<String> listaDeCompras, Scanner scanner) {
         System.out.println("Digite o nome do item para adicionar a lista: ");
         String item = scanner.nextLine();
-        listaDeCompras.add(item);
-        System.out.println(item + " foi adicionado à lista de compras!");
+        if (listaDeCompras.contains(item)) {
+            System.out.println("Esse item já está na lista!");
+        }
+        else {
+            listaDeCompras.add(item);
+            System.out.println(item + " foi adicionado à lista de compras!");
+        }
     }
 
     // Função feita para remover um item presente na lista
